@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<body>
+    <form action = "http://localhost:5000/main" method = "POST">
+        <div class="mb-3">
+            <label class="form-label">Input Query</label>
+            <input class="form-control input-lg" type ="text" name = "query" />
+        </div>
+        <input class="btn btn-primary" type = "submit" value = "submit" />
+        {% if output %}
+        <div class="mb-3">
+            <label class="form-label">Result of Given Query</label>
+            <label class="form-label">{{ output }}</label>
+        </div>
+        {% else %}
+        <h6>No output</h6>
+        {% endif %}  
+    </form>
+    <form action = "http://localhost:5000/dbpedia" method = "POST">
+        <div class="mb-3">
+            <label class="form-label">Dbpedia Query</label>
+            <input class="form-control input-lg" type ="text" name = "dbpedia_output" />
+        </div>
+        <input class="btn btn-primary" type = "submit" value = "submit" />
+        {% if dbpedia_output %}
+        <div class="mb-3">
+            <label class="form-label">Result of Query</label>
+            <label class="form-label">{{ dbpedia_output }}</label>
+        </div>
+        {% else %}
+        <h6>No output</h6>
+        {% endif %}
+    </form>
+</body>
+</html>

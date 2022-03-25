@@ -1,0 +1,470 @@
+@prefix : <http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment> .
+
+<http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment> rdf:type owl:Ontology ;
+                                                                        rdfs:comment "Ontology About nitrogen distribution"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#alınır_ve_dönüştürülür
+:alınır_ve_dönüştürülür rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#bir_parçası
+:bir_parçası rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#birazı_emilir
+:birazı_emilir rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#birazı_geçer
+:birazı_geçer rdf:type owl:ObjectProperty ;
+              rdfs:domain :Molekül ,
+                          :NO3 ;
+              rdfs:range :Atmosfer .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#birleşir
+:birleşir rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#dönüşür
+:dönüşür rdf:type owl:ObjectProperty ;
+         rdfs:domain :Molekül ,
+                     :NO2 ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :element ;
+                       owl:hasValue :O
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :element ;
+                       owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Element
+                     ] ;
+         rdfs:range :Molekül ,
+                    :NO3 .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#element
+:element rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#oksijen_gazı_verir
+:oksijen_gazı_verir rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#oluşturur
+:oluşturur rdf:type owl:ObjectProperty ;
+           rdfs:domain :Atmosfer ;
+           rdfs:range :Molekül ,
+                      :NO2 ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :element ;
+                        owl:hasValue :O
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :element ;
+                        owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Element
+                      ] .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#sayı
+:sayı rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#serbest_azot_gazı_verir
+:serbest_azot_gazı_verir rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#topraktan_aldığı_nitratı_iletir
+:topraktan_aldığı_nitratı_iletir rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#yağmur_ile_iner
+:yağmur_ile_iner rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#yer
+:yer rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#ölü_hayvanları_parçalayarak_oluşturur
+:ölü_hayvanları_parçalayarak_oluşturur rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#ölür
+:ölür rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#is_alive
+:is_alive rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#is_partof
+:is_partof rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#number
+:number rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Atmosfer
+:Atmosfer rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Atmosferik_Olaylar
+:Atmosferik_Olaylar rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Ayrıştırıcılar
+:Ayrıştırıcılar rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Azot_Bağlayıcı_Bakteriler
+:Azot_Bağlayıcı_Bakteriler rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Bitki
+:Bitki rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Bitki_kökü
+:Bitki_kökü rdf:type owl:Class ;
+            rdfs:subClassOf :Bitki .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Bitki_parçası
+:Bitki_parçası rdf:type owl:Class ;
+               rdfs:subClassOf :Bitki .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Element
+:Element rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Etobur
+:Etobur rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:complementOf :Otobur
+                            ] ;
+        rdfs:subClassOf :Hayvan ,
+                        [ rdf:type owl:Class ;
+                          owl:complementOf :Otobur
+                        ] .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Hayvan
+:Hayvan rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Molekül
+:Molekül rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#NH3
+:NH3 rdf:type owl:Class ;
+     owl:equivalentClass [ rdf:type owl:Restriction ;
+                           owl:onProperty :element ;
+                           owl:hasValue :N
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :element ;
+                           owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Element
+                         ] ;
+     rdfs:subClassOf :Molekül .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#NO2
+:NO2 rdf:type owl:Class ;
+     owl:equivalentClass [ rdf:type owl:Restriction ;
+                           owl:onProperty :element ;
+                           owl:hasValue :O
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :element ;
+                           owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Element
+                         ] ;
+     rdfs:subClassOf :Molekül .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#NO3
+:NO3 rdf:type owl:Class ;
+     rdfs:subClassOf :Molekül .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Nitrat_Bakterileri
+:Nitrat_Bakterileri rdf:type owl:Class ;
+                    rdfs:subClassOf :Azot_Bağlayıcı_Bakteriler .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Nitrit_Bakterileri
+:Nitrit_Bakterileri rdf:type owl:Class ;
+                    rdfs:subClassOf :Azot_Bağlayıcı_Bakteriler .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Otobur
+:Otobur rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:complementOf :Etobur
+                            ] ;
+        rdfs:subClassOf :Hayvan ,
+                        [ rdf:type owl:Class ;
+                          owl:complementOf :Etobur
+                        ] .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Toprak
+:Toprak rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Volkanik_Faaliyetler
+:Volkanik_Faaliyetler rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Yıldırım
+:Yıldırım rdf:type owl:Class ;
+          rdfs:subClassOf :Atmosferik_Olaylar .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Şimşek
+:Şimşek rdf:type owl:Class ;
+        rdfs:subClassOf :Atmosferik_Olaylar .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Aslan
+:Aslan rdf:type owl:NamedIndividual ,
+                :Etobur ,
+                :Hayvan ,
+                [ rdf:type owl:Class ;
+                  owl:complementOf :Otobur
+                ] ;
+       :yer :İmpala ;
+       :is_alive "false"^^xsd:boolean ;
+       rdfs:label "Aslan" .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Elma_ağacı
+:Elma_ağacı rdf:type owl:NamedIndividual ,
+                     :Bitki ;
+            :is_alive "false"^^xsd:boolean ;
+            rdfs:label "Elma_ağacı" .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#Elma_ağacı_kökü
+:Elma_ağacı_kökü rdf:type owl:NamedIndividual ,
+                          :Bitki ,
+                          :Bitki_kökü ;
+                 :topraktan_aldığı_nitratı_iletir :Elma_ağacı ,
+                                                  :Elma_ağacı_kökü ;
+                 :is_partof "true"^^xsd:boolean ;
+                 rdfs:label "Elma_ağacı_kökü" .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#H
+:H rdf:type owl:NamedIndividual ,
+            :Element ;
+   :number ""^^xsd:int ;
+   rdfs:label "H" .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#N
+:N rdf:type owl:NamedIndividual ,
+            :Element ;
+   :number ""^^xsd:int ;
+   rdfs:label "N" .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#O
+:O rdf:type owl:NamedIndividual ,
+            :Element ;
+   :number ""^^xsd:int ;
+   rdfs:label "O" .
+
+
+###  http://www.semanticweb.org/ersu/ontologies/2022/0/OntologyAssignment#İmpala
+:İmpala rdf:type owl:NamedIndividual ,
+                 :Hayvan ,
+                 :Otobur ,
+                 [ rdf:type owl:Class ;
+                   owl:complementOf :Etobur
+                 ] ;
+        :yer :Elma_ağacı ,
+             :Elma_ağacı_kökü ;
+        :is_alive "false"^^xsd:boolean ;
+        rdfs:label "İmpala" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :element ;
+  owl:hasValue :N ;
+  owl:equivalentClass [ rdf:type owl:Restriction ;
+                        owl:onProperty :element ;
+                        owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Element
+                      ]
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :element ;
+  owl:hasValue :O ;
+  owl:equivalentClass [ rdf:type owl:Restriction ;
+                        owl:onProperty :element ;
+                        owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Element
+                      ]
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:complementOf :Etobur ;
+  rdfs:subClassOf :Hayvan
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:complementOf :Etobur ;
+  rdfs:subClassOf :Otobur
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:complementOf :Otobur ;
+  rdfs:subClassOf :Etobur
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:complementOf :Otobur ;
+  rdfs:subClassOf :Hayvan
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:y rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "Nitratı_İletir"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Bitki_kökü ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :Bitki ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :y
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :topraktan_aldığı_nitratı_iletir ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "Bitki"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Otobur ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :Bitki ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :y
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :yer ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "Otobur"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Etobur ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :Otobur ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :y
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :yer ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
